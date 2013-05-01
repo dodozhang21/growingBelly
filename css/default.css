@@ -14,26 +14,6 @@
 
 body, html { font-size: 100%; 	padding: 0; margin: 0;}
 
-/* Reset */
-*,
-*:after,
-*:before {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before,
-.clearfix:after {
-	content: " ";
-	display: table;
-}
-
-.clearfix:after {
-	clear: both;
-}
-
 body {
     font-family: 'Lato', Calibri, Arial, sans-serif;
     color: #47a3da;
@@ -49,70 +29,60 @@ a:hover {
 	color: #000;
 }
 
-.main {
 
+#growingBelly {
+	margin: 10px;
 }
 
-.main > section {
-
-}
-
-
-.main > section button,
-.main > section select {
+#growingBelly button,
+#growingBelly select {
 	border: none;
 	background: #47a3da;
 	color: #fff;
 	padding: 5px;
 	display: block;
-	width: 100%;
 	cursor: pointer;
 	font-size: 0.8em;
 }
-.main > section button:hover {
+#growingBelly button:hover {
 	background: #258ecd;
 }
 
-.main > section button.active {
+#growingBelly button.active {
 	background: #0d77b6;
 }
-
-.main > section button.disabled {
-	background: #aaa;
-	pointer-events: none;
-}
-
-.icon-drop:before, 
-.icon-arrow-left:before {
-	font-family: 'fontawesome';
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 2;
-	text-align: center;
-	color: #47a3da;
-	-webkit-font-smoothing: antialiased;
-	text-indent: 8000px;
-	padding-left: 8px;
-}
-
-.container > header nav a:hover:before {
-	color: #fff;
-}
-
-.icon-drop:before {
-	content: "\e000";
-}
-
-.icon-arrow-left:before {
-	content: "\f060";
+#growingBelly .selection {
+	margin-bottom: 10px;
+	position: relative;
 }
 
 #growingBelly .left {
+	width: 60px;
 	float: left;
-	margin-right: 1em;
+}
+
+#growingBelly .right {
+	margin-left: 70px;
+	width: auto;
+	background: yellow;
+}
+
+#growingBelly select {
+	width: 100%;
+}
+
+#growingBelly .photoWrapper {
+	background: rgba(71,163,218,.5);
+	position: relative;
+	margin-bottom: 10px;
+}
+#growingBelly .angle {
+	position: absolute;
+	background: rgba(0,0,0,.5);
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0,0,0,.8);
+	padding: 10px;
+	top: 60%;
+	left: 0;
+	right: 0;
 }

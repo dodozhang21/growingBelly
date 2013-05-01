@@ -23,7 +23,7 @@
 				<a href="#">Dandelion bunya</a>
 				<a href="#">Rutabaga</a>
 			</nav>
-			<section class="buttonset">
+			<section class="selection">
 				<div class="left">
 					<button class="showSelection">Models</button>
 				</div>
@@ -31,6 +31,7 @@
 					<select class="months">
 						<option value="1">Month 1</option>
 						<option value="2">Month 2</option>
+						<!--
 						<option value="3">Month 3</option>
 						<option value="4">Month 4</option>
 						<option value="5">Month 5</option>
@@ -38,26 +39,38 @@
 						<option value="7">Month 7</option>
 						<option value="8">Month 8</option>
 						<option value="9">Month 9</option>
+						-->
 					</select>
 				</div>
 			</section>
-			<section class="photo">
-				<img src="images/
-			</section>
-			<section class="monthText">
+			<section class="content">
+				<div class="photoWrapper">
+					<img src="images/month1_KatBack.png" class="photo" />
+					<div class="angle"></div>
+				</div>
+				<article class="monthText"></article>
 			</section>
 		</div>
-		<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+
 		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
 		<script type="text/javascript" src="js/data.js"></script>
 
 		<script>
 			$(function() {
-				var menuLeft = $('#growingBelly .menuLeft'),
-					showSelection = $('#growingBelly .showSelection')
-					monthSelection = $('#growingBelly .months');
-					body = document.body;
-				
+				var menuLeft = $('#growingBelly .menuLeft')
+					,showSelection = $('#growingBelly .showSelection')
+					,monthSelection = $('#growingBelly .months')
+					,body = document.body
+					,photo = $('#growingBelly .photo')
+					,angle = $('#growingBelly .angle')
+					,monthText = $('#growingBelly .monthText')
+					;
+				// init
+				$(monthText).html(defaultText);
+				$(photo).attr('src', imagePath + defaultPhoto + imageExtension);
+				$(angle).html(defaultAngle);
+
+
 				$(showSelection).click(function() {
 					$(this).toggleClass('active');
 					$(body).toggleClass('cbp-spmenu-push-toright');

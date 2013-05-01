@@ -21,7 +21,7 @@ var months =
                 ]
             }
         ],
-        "text": "Congratulations! Welcome to the most exciting, personal, and magical journey of your life. As your body makes a home for your baby, note what's happening to your body, especially to your belly. Measure your waist and take a photo of yourself each month – you'll have fun comparing later!"
+        "text": "Congratulations! Welcome to the most exciting, personal, and magical journey of your life. As your body makes a home for your baby, note what's happening to your body, especially to your belly. Measure your waist and take a photo of yourself each month - you'll have fun comparing later!"
     },
 	
     "2": {
@@ -216,3 +216,11 @@ var months =
         "text": "Down the home stretch! Your belly is round, resilient, and ready for birth. Your feelings may bounce from excitement to anxiety, but give yourself credit for how far you've come on this amazing nine-month journey. And get set to meet your baby!"
     }
 }
+;
+
+var defaultText = months["1"].text
+,defaultPhoto = "month1_KatBack"
+,defaultAngle = "Back"
+,imageExtension = ".png"
+,imagePath = "images/"
+;
