@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Growing Belly</title>
+		<meta name="description" content="Blueprint: Slide and Push Menus" />
+		<meta name="keywords" content="sliding menu, pushing menu, navigation, responsive, menu, css, jquery" />
+		<meta name="author" content="Codrops" />
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="cbp-spmenu-push">
+		<div id="growingBelly" class="main">
+			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left menuLeft">
+				<h3>Models</h3>
+				<a href="#">Celery seakale</a>
+				<a href="#">Dulse daikon</a>
+				<a href="#">Zucchini garlic</a>
+				<a href="#">Catsear azuki bean</a>
+				<a href="#">Dandelion bunya</a>
+				<a href="#">Rutabaga</a>
+			</nav>
+			<section class="buttonset">
+				<div class="left">
+					<button class="showSelection">Models</button>
+				</div>
+				<div class="right">
+					<select class="months">
+						<option value="1">Month 1</option>
+						<option value="2">Month 2</option>
+						<option value="3">Month 3</option>
+						<option value="4">Month 4</option>
+						<option value="5">Month 5</option>
+						<option value="6">Month 6</option>
+						<option value="7">Month 7</option>
+						<option value="8">Month 8</option>
+						<option value="9">Month 9</option>
+					</select>
+				</div>
+			</section>
+			<section class="photo">
+				<img src="images/
+			</section>
+			<section class="monthText">
+			</section>
+		</div>
+		<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+		<script type="text/javascript" src="js/data.js"></script>
+
+		<script>
+			$(function() {
+				var menuLeft = $('#growingBelly .menuLeft'),
+					showSelection = $('#growingBelly .showSelection')
+					monthSelection = $('#growingBelly .months');
+					body = document.body;
+				
+				$(showSelection).click(function() {
+					$(this).toggleClass('active');
+					$(body).toggleClass('cbp-spmenu-push-toright');
+					$(menuLeft).toggleClass('cbp-spmenu-open');
+				});
+
+				$(monthSelection).change(function() {
+				});
+			});
+		</script>
+	</body>
+</html>
