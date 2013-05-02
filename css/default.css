@@ -138,23 +138,46 @@ a:hover {
 	list-style: none;
 }
 #growingBelly #accordion ul li {
-	padding: 5px 10px 5px 20px;
+	padding: 5px 10px 5px 50px;
 	display: block;
 	cursor: pointer;
+	position: relative;
+}
+#growingBelly #accordion ul li.selected:before {
+	content: '';
+	position: absolute;
+	top: 8px;
+	left: 30px;
+	background-image: url(../images/checkmark.svg);
+    background-size: cover;
+	width: 15px;
+	height: 15px;
 }
 #growingBelly #accordion ul li:hover {
 	background-color: rgba(14,119,182,.3);
 }
 #growingBelly #accordion h4 {
 	margin: 0;
-	padding: 10px;
+	padding: 10px 10px 10px 30px;
 	border-top: 1px solid #AFDEFA;
+	position: relative;
 }
 #growingBelly #accordion h4#model1Name {
 	background: rgba(14,119,182,.5) url(../images/model1Thumbnail.png) right center no-repeat;
 }
 #growingBelly #accordion h4#model2Name {
 	background: rgba(14,119,182,.5) url(../images/model2Thumbnail.png) right center no-repeat;
+}
+#growingBelly #accordion h4#model1Name.ui-state-active:before,
+#growingBelly #accordion h4#model2Name.ui-state-active:before {
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 5px;
+	background-image: url(../images/checkmark.svg);
+    background-size: cover;
+	width: 20px;
+	height: 20px;
 }
 #growingBelly #accordion h4 img {
 	display: block;
@@ -169,7 +192,6 @@ a:hover {
 }
 
 /* swipe */
-
 .swipe {
   overflow: hidden;
   visibility: hidden;
