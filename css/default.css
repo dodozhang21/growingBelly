@@ -1,4 +1,3 @@
-/* General Demo Style */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 @font-face {
@@ -32,6 +31,7 @@ a:hover {
 
 #growingBelly {
 	margin: 10px;
+	max-width: 350px;
 }
 
 #growingBelly button,
@@ -76,7 +76,7 @@ a:hover {
 	position: relative;
 	margin-bottom: 10px;
 }
-#growingBelly .angle {
+#growingBelly .angleNav {
 	position: absolute;
 	background: rgba(0,0,0,.5);
 	color: #fff;
@@ -85,4 +85,110 @@ a:hover {
 	top: 60%;
 	left: 0;
 	right: 0;
+}
+
+#growingBelly .angleNav {
+	display: block;
+	text-align: center;
+}
+
+#growingBelly .angleNav #prevAngle,
+#growingBelly .angleNav #nextAngle {
+	cursor: pointer;
+}
+
+#growingBelly .angleNav #prevAngle:before,
+#growingBelly .angleNav #nextAngle:after {
+	content: '';
+	height: 0;
+	width: 0;
+	position: absolute;
+	top: 5px;
+	left: -10px;
+	border: 15px solid transparent;
+	border-right-color: #fff;
+}
+#growingBelly .angleNav #nextAngle:after {
+	border-right-color: transparent;
+	border-left-color: #fff;
+	left: auto;
+	right: -10px;
+}
+/* why doesn't this work? 
+#growingBelly .angleNav:hover .angle,
+#growingBelly .angleNav .angle:before:hover,
+#growingBelly .angleNav .angle:after:hover {
+	color: rgba(255,255,255,.5);
+	border-left-color: rgba(255,255,255,.5);
+	border-right-color: rgba(255,255,255,.5);
+}
+*/
+#growingBelly h3 {
+	padding: 10px;
+}
+#growingBelly #accordion {
+	color: #fff;
+}
+#growingBelly #accordion img {
+	max-width: 100%;
+}
+#growingBelly #accordion ul {
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+#growingBelly #accordion ul li {
+	padding: 5px 10px 5px 20px;
+	display: block;
+	cursor: pointer;
+}
+#growingBelly #accordion ul li:hover {
+	background-color: rgba(14,119,182,.3);
+}
+#growingBelly #accordion h4 {
+	margin: 0;
+	padding: 10px;
+	border-top: 1px solid #AFDEFA;
+}
+#growingBelly #accordion h4#model1Name {
+	background: rgba(14,119,182,.5) url(../images/model1Thumbnail.png) right center no-repeat;
+}
+#growingBelly #accordion h4#model2Name {
+	background: rgba(14,119,182,.5) url(../images/model2Thumbnail.png) right center no-repeat;
+}
+#growingBelly #accordion h4 img {
+	display: block;
+	margin-top: 10px;
+}
+#growingBelly #accordion h4#model1Name:hover,
+#growingBelly #accordion h4#model2Name:hover {
+	background-color: rgba(14,119,182,.9);
+	cursor: pointer;
+}
+#growingBelly #accordion aside {
+}
+
+/* swipe */
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}
+
+#growingBelly #photos {
+	width: auto;
+	height: 548px;
+}
+#growingBelly #photos img {
+	max-width: 100%;
 }

@@ -15,13 +15,33 @@
 	<body class="cbp-spmenu-push">
 		<div id="growingBelly" class="main">
 			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left menuLeft">
-				<h3>Models</h3>
-				<a href="#">Celery seakale</a>
-				<a href="#">Dulse daikon</a>
-				<a href="#">Zucchini garlic</a>
-				<a href="#">Catsear azuki bean</a>
-				<a href="#">Dandelion bunya</a>
-				<a href="#">Rutabaga</a>
+				<header>
+					<h3>Models</h3>
+				</header>
+				<div id="accordion">
+					<h4 id="model1Name">
+						Kat
+					</h4>
+					<aside>
+						<ul class="angles">
+							<li angle="Back">Back</li>
+							<li angle="Front">Front</li>
+							<li angle="Left">Left</li>
+							<li angle="Right">Right</li>
+						</ul>
+					</aside>
+					<h4 id="model2Name">
+						Jessica
+					</h4>
+					<aside>
+						<ul class="angles">
+							<li angle="Back">Back</li>
+							<li angle="Front">Front</li>
+							<li angle="Left">Left</li>
+							<li angle="Right">Right</li>
+						</ul>
+					</aside>
+				</div>
 			</nav>
 			<section class="selection">
 				<div class="left">
@@ -45,40 +65,94 @@
 			</section>
 			<section class="content">
 				<div class="photoWrapper">
-					<img src="images/month1_KatBack.png" class="photo" />
-					<div class="angle"></div>
-				</div>
+					<div id='photos' class='swipe'>
+						<div class='swipe-wrap'>
+							<div class='wrap'>
+								<img src="images/month1_KatBack.png" class="photo" title="Back" alt="Back" />
+							</div>
+							<div class='wrap'>
+								<img src="images/month1_KatFront.png" class="photo" title="Front" alt="Front" />
+							</div>
+							<div class='wrap'>
+								<img src="images/month1_KatLeft.png" class="photo" title="Left" alt="Left" />
+							</div>
+							<div class='wrap'>
+								<img src="images/month1_KatRight.png" class="photo" title="Right" alt="Right" />
+							</div>
+						</div><!-- .swipe-wrap -->    
+						<nav class="angleNav">
+							<span id="angle"></span>
+							<span id="prevAngle"></span>
+							<span id="nextAngle"></span>
+						</nav>
+					</div><!-- #photos -->
+				</div><!-- .photoWrapper -->
 				<article class="monthText"></article>
 			</section>
 		</div>
 
-		<script type="text/javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/swipe.js"></script>
 		<script type="text/javascript" src="js/data.js"></script>
 
 		<script>
+
 			$(function() {
 				var menuLeft = $('#growingBelly .menuLeft')
 					,showSelection = $('#growingBelly .showSelection')
 					,monthSelection = $('#growingBelly .months')
 					,body = document.body
-					,photo = $('#growingBelly .photo')
-					,angle = $('#growingBelly .angle')
+					,angle = $('#growingBelly #angle')
 					,monthText = $('#growingBelly .monthText')
+					,angleSelect = $('#growingBelly #accordion .angles li')
+					,accordion = $("#growingBelly #accordion")
+					,prevAngle = $("#growingBelly #prevAngle")
+					,nextAngle = $("#growingBelly #nextAngle")
+					,mySwipe
 					;
 				// init
 				$(monthText).html(defaultText);
-				$(photo).attr('src', imagePath + defaultPhoto + imageExtension);
 				$(angle).html(defaultAngle);
+
+				mySwipe = $('#photos').Swipe({
+					startSlide: 0,
+					speed: 400,
+					//auto: 3000,
+					continuous: true,
+					disableScroll: false,
+					stopPropagation: false,
+					callback: function(index, elem) {
+						var photo = $(elem).find('.photo');
+						var title = $(photo).attr('title');
+						$(angle).html(title);
+					},
+					transitionEnd: function(index, elem) {}
+				}).data('Swipe');
 
 
 				$(showSelection).click(function() {
-					$(this).toggleClass('active');
-					$(body).toggleClass('cbp-spmenu-push-toright');
-					$(menuLeft).toggleClass('cbp-spmenu-open');
+					toggleMenu();
 				});
 
 				$(monthSelection).change(function() {
 				});
+
+				$(accordion).accordion();
+				$(angleSelect).click(function() {
+					toggleMenu();
+				});
+				
+				$(prevAngle).click(function() {mySwipe.prev();});
+				$(nextAngle).click(function() {mySwipe.next();});
+				
+
+				
+				function toggleMenu() {
+					$(showSelection).toggleClass('active');
+					$(body).toggleClass('cbp-spmenu-push-toright');
+					$(menuLeft).toggleClass('cbp-spmenu-open');
+				}
 			});
 		</script>
 	</body>
