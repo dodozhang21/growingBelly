@@ -104,18 +104,7 @@
 				,angleSelected = defaultAngle
 				;
 			
-			var mySwipe = $('#growingBelly #photos').Swipe({
-					startSlide: 0,
-					speed: 400,
-					//auto: 3000,
-					continuous: true,
-					disableScroll: false,
-					stopPropagation: false,
-					callback: function(index, elem) {
-						angleLoaded(elem);
-					},
-					transitionEnd: function(index, elem) {}
-				}).data('Swipe');
+			var mySwipe = startSlide(0);
 
 			$(function() {
 				// init
@@ -240,14 +229,30 @@
 //                var monthToSelect = $(monthsSelection).find("[value='"+ monthToUse.number +"']")
 //                $(monthToSelect).parent().addClass("current");
 				$(monthText).html(monthToUse.text);
-				mySwipe.setup();
-				mySwipe.slide(selectedAngleIndex, 0);
+                mySwipe = startSlide(selectedAngleIndex);
+//				mySwipe.setup();
+//				mySwipe.slide(selectedAngleIndex, 0);
 			}
 
 			function getImageSrc(angle) {
 				var imageSrc = imagePath + 'month' + monthSelected + modelSelected + angle + imageExtension;
 				return imageSrc;
 			}
+
+            function startSlide(index) {
+                return $('#growingBelly #photos').Swipe({
+                    startSlide: index,
+                    speed: 400,
+                    //auto: 3000,
+                    continuous: true,
+                    disableScroll: false,
+                    stopPropagation: false,
+                    callback: function(index, elem) {
+                        angleLoaded(elem);
+                    },
+                    transitionEnd: function(index, elem) {}
+                });
+            }
 		</script>
 	</body>
 </html>
