@@ -46,7 +46,7 @@
 					<div class="showSelection">
                         Models
                         <span id="selectionOutline"></span>
-                        <span id="selectionTip">Click/tab here for more models</span>
+                        <span id="selectionTip">Tap here for more models</span>
                     </div>
 				</div>
 				<div class="right">
@@ -113,10 +113,12 @@
                 $(document).on('click touch tap', '#growingBelly', function() {
                     hideSelectionTip();
                 });
-
-                setTimeout(function(){
+                $(selectionTip).show();
+                setTimeout(function() {
                     $(selectionTip).fadeOut();
                 }, 3000);
+
+
 
 				$(prevAngle).click(function() {mySwipe.prev();});
 				$(nextAngle).click(function() {mySwipe.next();});
@@ -251,7 +253,7 @@
                         angleLoaded(elem);
                     },
                     transitionEnd: function(index, elem) {}
-                });
+                }).data('Swipe');
             }
 		</script>
 	</body>
