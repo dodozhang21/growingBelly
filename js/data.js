@@ -232,4 +232,6 @@ var defaultMonth = "1"
 ,defaultAngle = "Front"
 ,imageExtension = ".png"
 ,imagePath = "images/"
+,imageWidth = "350"
+,imageHeight = "300"
 ;

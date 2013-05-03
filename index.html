@@ -2,12 +2,10 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Growing Belly</title>
-		<meta name="description" content="Blueprint: Slide and Push Menus" />
-		<meta name="keywords" content="sliding menu, pushing menu, navigation, responsive, menu, css, jquery" />
-		<meta name="author" content="Codrops" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Growing Belly</title>
+		<meta name="author" content="Ying Zhang" />
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script src="js/modernizr.custom.js"></script>
@@ -45,46 +43,31 @@
 			</nav>
 			<section class="selection">
 				<div class="left">
-					<button class="showSelection">
+					<div class="showSelection">
                         Models
-                        <div id="toolTip">
-                            <span id="selectionOutline"></span>
-                            <span id="selectionTip">Click/tab here for more models</span>
-                        </div>
-                    </button>
+                        <span id="selectionOutline"></span>
+                        <span id="selectionTip">Click/tab here for more models</span>
+                    </div>
 				</div>
 				<div class="right">
-					<select class="months">
-						<option value="1">Month 1</option>
-						<option value="2">Month 2</option>
-						<!--
-						<option value="3">Month 3</option>
-						<option value="4">Month 4</option>
-						<option value="5">Month 5</option>
-						<option value="6">Month 6</option>
-						<option value="7">Month 7</option>
-						<option value="8">Month 8</option>
-						<option value="9">Month 9</option>
-						-->
-					</select>
+                    <select class="months">
+                        <option value="1">Month 1</option>
+                        <option value="2">Month 2</option>
+                    </select>
+                    <!--
+                    <nav class="months">
+					<ul>
+						<li class="current"><a href="#" value="1">Month 1</a></li>
+						<li><a href="#" value="2">Month 2</a></li>
+					</ul>
+                    </nav>
+                    -->
 				</div>
 			</section>
 			<section class="content">
 				<div class="photoWrapper">
 					<div id='photos' class='swipe'>
 						<div class='swipe-wrap'>
-							<div class='wrap'>
-								<img src="images/month1KatBack.png" model="Kat" class="photo" angle="Back" alt="Back" />
-							</div>
-							<div class='wrap'>
-								<img src="images/month1KatFront.png" model="Kat" class="photo" angle="Front" alt="Front" />
-							</div>
-							<div class='wrap'>
-								<img src="images/month1KatLeft.png" model="Kat" class="photo" angle="Left" alt="Left" />
-							</div>
-							<div class='wrap'>
-								<img src="images/month1KatRight.png" model="Kat" class="photo" angle="Right" alt="Right" />
-							</div>
 						</div><!-- .swipe-wrap -->    
 						<nav class="angleNav">
 							<span id="angle"></span>
@@ -138,10 +121,13 @@
 				// init
 				loadSelection();
                 // selection tip fade out
-                $(document).on('click', '#growingBelly', function() {
-                   $(selectionTip).hide();
+                $(document).on('click touch tap', '#growingBelly', function() {
+                    hideSelectionTip();
                 });
-                $(selectionTip).fadeOut(7000);
+
+                setTimeout(function(){
+                    $(selectionTip).fadeOut();
+                }, 3000);
 
 				$(prevAngle).click(function() {mySwipe.prev();});
 				$(nextAngle).click(function() {mySwipe.next();});
@@ -162,10 +148,15 @@
 				});
 
 				$(monthSelection).change(function() {
-					monthSelected = $(this).val();
+					monthSelected = $(this).attr("value");
 					loadSelection();
+                    return false;
 				});
 			});
+
+            function hideSelectionTip() {
+                $(selectionTip).hide();
+            }
 
 			function toggleMenu() {
 				$(showSelection).toggleClass('active');
@@ -238,13 +229,16 @@
 						selectedAngleIndex = index;
 					}
 					var imageSrc = getImageSrc(angleData);
-					swipeHtml += "<div class='wrap'><img src='" + imageSrc + "' model='" + modelSelected + "' class='photo' angle='" + angleData + "' alt='" + angleData + "' /></div>";
+					swipeHtml += "<div class='wrap'><img src='" + imageSrc + "' width='"+imageWidth+"' height='"+imageHeight+"' model='" + modelSelected + "' class='photo' angle='" + angleData + "' alt='" + angleData + "' /></div>";
 					index++;
 				}
 
 				$(swipeWrap).html(swipeHtml);
 				$(angle).html(angleToUse);
 				selectOnMenu();
+//                $(monthsSelection).removeClass("current");
+//                var monthToSelect = $(monthsSelection).find("[value='"+ monthToUse.number +"']")
+//                $(monthToSelect).parent().addClass("current");
 				$(monthText).html(monthToUse.text);
 				mySwipe.setup();
 				mySwipe.slide(selectedAngleIndex, 0);

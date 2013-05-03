@@ -33,21 +33,43 @@ a:hover {
 	margin: 10px;
 	max-width: 370px;
 }
-#growingBelly button,
-#growingBelly select {
-	border: none;
-	background: #47a3da;
-	color: #fff;
-	padding: 5px;
-	display: block;
-	cursor: pointer;
-	font-size: 0.8em;
+
+#growingBelly .left {
+    float: left;
+}
+#growingBelly .right {
+    margin-left: 70px;
+}
+#growingBelly .showSelection,
+#growingBelly .months {
+    border: none;
+    background: #47a3da;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 13px;
+    outline: none;
+}
+#growingBelly .months {
+    width: 100%;
+    height: 26px;
+    line-height: 22px; /* for safari */
+}
+#growingBelly .months:focus {
+    outline: none;
 }
 #growingBelly .showSelection {
     position: relative;
 }
+#growingBelly .showSelection:hover {
+    background: #258ecd;
+}
 
-#growingBelly #toolTip {
+#growingBelly .showSelection.active {
+    background: #0d77b6;
+}
+#growingBelly .showSelection {
+    margin-bottom: 10px;
 }
 #growingBelly #selectionOutline {
     position: absolute;
@@ -76,35 +98,14 @@ a:hover {
     top: -20px;
     left: 20px;
 }
-#growingBelly button:hover {
-	background: #258ecd;
-}
 
-#growingBelly button.active {
-	background: #0d77b6;
-}
-#growingBelly .selection {
-	margin-bottom: 10px;
-	position: relative;
-}
 
-#growingBelly .left {
-	width: 60px;
-	float: left;
-}
 
-#growingBelly .right {
-	margin-left: 70px;
-	width: auto;
-	background: yellow;
-}
 
-#growingBelly select {
-	width: 100%;
+#growingBelly .content {
+    clear:both;
 }
-
 #growingBelly .photoWrapper {
-	background: rgba(71,163,218,.5);
 	position: relative;
 	margin-bottom: 10px;
 }
@@ -243,9 +244,71 @@ a:hover {
 
 #growingBelly #photos {
 	width: auto;
-	height: 300px;
-    padding: 10px;
+	max-height: 320px;
 }
 #growingBelly #photos img {
 	max-width: 100%;
+    /*border: 10px solid rgba(71,163,218,.5);*/
 }
+
+
+
+/* styling month list
+#growingBelly .months {
+    position: relative;
+    z-index: 102;
+    width: 100%;
+}
+#growingBelly .months ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #47A3DA;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8em;
+}
+#growingBelly .months li {
+    display: none;
+    margin: 0;
+}
+#growingBelly .months .current {
+    display: block;
+}
+#growingBelly .months a {
+    display: block;
+    padding: 10px 10px 10px 30px;
+    text-align: left;
+    cursor: pointer;
+}
+#growingBelly .months a:hover {
+    color: #fff;
+    background: rgba(14,119,182,.9);
+}
+#growingBelly .months .current a {
+    background: none;
+    color: #fff;
+}
+
+#growingBelly .months ul:hover {
+    background-image: none;
+}
+#growingBelly .months ul:hover li {
+    display: block;
+    margin: 0 0 5px;
+}
+#growingBelly .months ul:hover .current {
+    background: url(../images/icon-check.png) no-repeat 10px center;
+}
+
+#growingBelly .months.right ul {
+    left: auto;
+    right: 0;
+}
+
+#growingBelly .months.center ul {
+    left: 50%;
+    margin-left: -90px;
+}
+ */
