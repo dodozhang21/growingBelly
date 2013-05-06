@@ -73,7 +73,19 @@
 		</section><!-- #growingBelly -->
 
 		<script type="text/javascript" src="//zeptojs.com/zepto.min.js"></script>
-		<script type="text/javascript" src="js/swipe.js"></script>
+
+        <!-- for accordion -->
+		<script type="text/javascript" src="//raw.github.com/h5bp/mobile-boilerplate/master/js/helper.js"></script>
+		<script type="text/javascript" src="js/zepto.accordion.js"></script>
+        <!-- END OF for accordion -->
+
+        <!-- for fadeout -->
+        <script type="text/javascript" src="//raw.github.com/madrobby/zepto/master/src/event.js"></script>
+        <script type="text/javascript" src="//raw.github.com/madrobby/zepto/master/src/fx.js"></script>
+        <script type="text/javascript" src="//raw.github.com/madrobby/zepto/master/src/fx_methods.js"></script>
+        <!-- END OF for fadeout -->
+
+        <script type="text/javascript" src="js/swipe.js"></script>
 		<script type="text/javascript" src="js/data.js"></script>
 
 		<script>
@@ -105,9 +117,9 @@
                     hideSelectionTip();
                 });
                 $(selectionTip).show();
-/*                setTimeout(function() {
+                setTimeout(function() {
                     $(selectionTip).fadeOut();
-                }, 3000);*/
+                }, 3000);
 
 
 
@@ -118,7 +130,9 @@
 				$(showSelection).click(function() {
 					toggleMenu();
 				});
-//				$(accordion).accordion();
+				$(accordion).accordion();
+                // show default model
+                $('#Kat').show();
 
 
 				// other elements
@@ -228,7 +242,8 @@
 			}
 
             function startSlide(index) {
-                return $('#growingBelly #photos').Swipe({
+//                var growingBelly = document.getElementById('growingBelly');
+                return new Swipe(document.getElementById('photos'), {
                     startSlide: index,
                     speed: 400,
                     //auto: 3000,
@@ -239,7 +254,7 @@
                         angleLoaded(elem);
                     },
                     transitionEnd: function(index, elem) {}
-                }).data('Swipe');
+                });
             }
 		</script>
 	</body>
