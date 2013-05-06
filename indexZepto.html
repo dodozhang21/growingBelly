@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Growing Belly Zepto</title>
+		<meta name="author" content="Ying Zhang" />
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body class="cbp-spmenu-push">
+		<section id="growingBelly" class="main">
+			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left menuLeft">
+				<header>
+					<h3>Models</h3>
+				</header>
+				<section id="accordion">
+					<h4 id="model1Name">
+						Kat
+					</h4>
+					<aside id="Kat">
+						<ul class="angles">
+							<li angle="Back" model="Kat">Back</li>
+							<li angle="Front" model="Kat">Front</li>
+							<li angle="Left" model="Kat">Left</li>
+							<li angle="Right" model="Kat">Right</li>
+						</ul>
+					</aside>
+					<h4 id="model2Name">
+						Jessica
+					</h4>
+					<aside id="Jessica">
+						<ul class="angles">
+							<li angle="Back" model="Jessica">Back</li>
+							<li angle="Front" model="Jessica">Front</li>
+							<li angle="Left" model="Jessica">Left</li>
+							<li angle="Right" model="Jessica">Right</li>
+						</ul>
+					</aside>
+				</section>
+			</nav>
+			<section class="selection">
+				<div class="left">
+					<div class="showSelection">
+                        Models
+                        <span id="selectionOutline"></span>
+                        <span id="selectionTip">Tap here for more models</span>
+                    </div>
+				</div>
+				<div class="right">
+                    <select class="months">
+                        <option value="1">Month 1</option>
+                        <option value="2">Month 2</option>
+                    </select>
+				</div>
+			</section>
+			<section class="content">
+				<div class="photoWrapper">
+					<div id='photos' class='swipe'>
+						<div class='swipe-wrap'>
+						</div><!-- .swipe-wrap -->    
+						<nav class="angleNav">
+							<span id="angle"></span>
+							<span id="prevAngle"></span>
+							<span id="nextAngle"></span>
+						</nav>
+					</div><!-- #photos -->
+				</div><!-- .photoWrapper -->
+				<article class="monthText"></article>
+			</section>
+		</section><!-- #growingBelly -->
+
+		<script type="text/javascript" src="//zeptojs.com/zepto.min.js"></script>
+		<script type="text/javascript" src="js/swipe.js"></script>
+		<script type="text/javascript" src="js/data.js"></script>
+
+		<script>
+			// init global
+			var menuLeft = $('#growingBelly .menuLeft')
+				,showSelection = $('#growingBelly .showSelection')
+				,monthSelection = $('#growingBelly .months')
+				,angle = $('#growingBelly #angle')
+				,monthText = $('#growingBelly .monthText')
+				,angleSelect = $('#growingBelly #accordion .angles li')
+				,accordion = $('#growingBelly #accordion')
+				,prevAngle = $("#growingBelly #prevAngle")
+				,nextAngle = $("#growingBelly #nextAngle")
+				,swipeWrap = $('#growingBelly #photos .swipe-wrap')
+				,selectionTip = $('#growingBelly #selectionOutline,#growingBelly #selectionTip')
+				,body = document.body
+				,monthSelected = defaultMonth
+				,modelSelected = defaultModel
+				,angleSelected = defaultAngle
+				;
+			
+			var mySwipe = startSlide(0);
+
+			$(function() {
+				// init
+				loadSelection();
+                // selection tip fade out
+                $(document).on('click touch tap', '#growingBelly', function() {
+                    hideSelectionTip();
+                });
+                $(selectionTip).show();
+/*                setTimeout(function() {
+                    $(selectionTip).fadeOut();
+                }, 3000);*/
+
+
+
+				$(prevAngle).click(function() {mySwipe.prev();});
+				$(nextAngle).click(function() {mySwipe.next();});
+
+				// menu
+				$(showSelection).click(function() {
+					toggleMenu();
+				});
+//				$(accordion).accordion();
+
+
+				// other elements
+				$(angleSelect).click(function() {
+					modelSelected = $(this).attr('model');
+					angleSelected = $(this).attr('angle');
+					loadSelection();
+					toggleMenu();
+				});
+
+				$(monthSelection).change(function() {
+					monthSelected = $(this).attr("value");
+					loadSelection();
+                    return false;
+				});
+			});
+
+            function hideSelectionTip() {
+                $(selectionTip).hide();
+            }
+
+			function toggleMenu() {
+				$(showSelection).toggleClass('active');
+				$(body).toggleClass('cbp-spmenu-push-toright');
+				$(menuLeft).toggleClass('cbp-spmenu-open');
+			}
+			
+			// for swipe
+			function angleLoaded(elem) {
+				var photo = $(elem).find('.photo');
+				var model = $(photo).attr('model');
+				var modelAngle = $(photo).attr('angle');
+				
+				modelSelected = model;
+				angleSelected = modelAngle;
+
+				$(angle).html(angleSelected);
+				selectOnMenu();
+			}
+
+			function selectOnMenu() {
+				var selectedAngle = $(accordion).find('#'+modelSelected).find("[angle='"+angleSelected+"']");
+				$(angleSelect).removeClass('selected');
+				$(selectedAngle).addClass('selected');
+			}
+
+			function loadSelection() {
+				var monthToUse, modelToUse, angleToUse;
+
+				// verify month is valid
+				var monthData = months[monthSelected];
+				if(monthData) { 
+					monthToUse = monthData;
+				} else {
+					monthToUse = defaultMonth;
+				}
+
+				// verify model is valid
+				var modelsData = monthData["models"];
+				modelToUse = modelsData[defaultModel];
+				for (var x in modelsData) {
+					var modelData = modelsData[x];
+					if(modelData.name == modelSelected) {
+						modelToUse = modelData;
+					}
+				}
+
+				// verify angle is valid
+				var anglesData = modelToUse["angles"];
+				angleToUse = anglesData[0]; // first angle available to the model as default
+				for (var x in anglesData) {
+					var angleData = anglesData[x];
+					if(angleData == angleSelected) {
+						angleToUse = angleData;
+					}
+				}
+
+				// update global
+				monthSelected = monthToUse.number;
+				angleSelected = angleToUse;
+				modelSelected = modelToUse.name;
+
+				// populate data
+                var selectedAngleIndex = 0
+				var index = 0;
+				var swipeHtml = "";
+				for (x in anglesData) {
+					var angleData = anglesData[x];
+					if(angleData == angleSelected) {
+						selectedAngleIndex = index;
+					}
+					var imageSrc = getImageSrc(angleData);
+					swipeHtml += "<div class='wrap'><img src='" + imageSrc + "' width='"+imageWidth+"' height='"+imageHeight+"' model='" + modelSelected + "' class='photo' angle='" + angleData + "' alt='" + angleData + "' /></div>";
+					index++;
+				}
+
+				$(swipeWrap).html(swipeHtml);
+				$(angle).html(angleToUse);
+				selectOnMenu();
+				$(monthText).html(monthToUse.text);
+                mySwipe = startSlide(selectedAngleIndex);
+			}
+
+			function getImageSrc(angle) {
+				var imageSrc = imagePath + 'month' + monthSelected + modelSelected + angle + imageExtension;
+				return imageSrc;
+			}
+
+            function startSlide(index) {
+                return $('#growingBelly #photos').Swipe({
+                    startSlide: index,
+                    speed: 400,
+                    //auto: 3000,
+                    continuous: true,
+                    disableScroll: false,
+                    stopPropagation: false,
+                    callback: function(index, elem) {
+                        angleLoaded(elem);
+                    },
+                    transitionEnd: function(index, elem) {}
+                }).data('Swipe');
+            }
+		</script>
+	</body>
+</html>
