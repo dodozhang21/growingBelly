@@ -29,19 +29,19 @@ a:hover {
 }
 
 
-#growingBelly {
+.growingBelly {
 	margin: 10px;
 	max-width: 370px;
 }
 
-#growingBelly .left {
+.growingBelly .left {
     float: left;
 }
-#growingBelly .right {
+.growingBelly .right {
     margin-left: 52px;
 }
-#growingBelly .showSelection,
-#growingBelly .months {
+.growingBelly .showSelection,
+.growingBelly .months {
     border: none;
     background: #47a3da;
     color: #fff;
@@ -50,34 +50,34 @@ a:hover {
     font-size: 13px;
     outline: none;
 }
-#growingBelly .months {
+.growingBelly .months {
     width: 100%;
     height: 26px;
     line-height: 22px; /* for safari */
     margin-bottom: 10px;
 }
-#growingBelly .months:focus {
+.growingBelly .months:focus {
     outline: none;
 }
-#growingBelly .showSelection {
+.growingBelly .showSelection {
     position: relative;
 }
-#growingBelly .showSelection:hover {
+.growingBelly .showSelection:hover {
     background-color: #258ecd;
 }
 
-#growingBelly .showSelection.active {
+.growingBelly .showSelection.active {
     background-color: #0d77b6;
 }
-#growingBelly .showSelection {
+.growingBelly .showSelection {
 	background: #47a3da url(../images/menu_icon.svg) center center no-repeat;
 	padding: 0;
 	height: 26px;
 }
-#growingBelly .showSelection .text {
+.growingBelly .showSelection .text {
 	visibility: hidden;
 }
-#growingBelly #selectionOutline {
+.growingBelly #selectionOutline {
     position: absolute;
     top: -10px;
     left: -10px;
@@ -86,7 +86,7 @@ a:hover {
     border: 10px solid rgba(0,0,0,.9);
     border-radius: 5px;
 }
-#growingBelly #selectionTip {
+.growingBelly #selectionTip {
     position: absolute;
     top: 50px;
     left: 20px;
@@ -96,7 +96,7 @@ a:hover {
     padding: 10px;
     z-index: 100;
 }
-#growingBelly #selectionTip:before {
+.growingBelly #selectionTip:before {
     content: '';
     border: 10px solid transparent;
     border-bottom-color: rgba(0,0,0,.9);
@@ -104,22 +104,22 @@ a:hover {
     top: -20px;
     left: 20px;
 }
-#growingBelly #selectionOutline,
-#growingBelly #selectionTip {
+.growingBelly #selectionOutline,
+.growingBelly #selectionTip {
     display: none;
 }
 
 
 
 
-#growingBelly .content {
+.growingBelly .content {
     clear:both;
 }
-#growingBelly .photoWrapper {
+.growingBelly .photoWrapper {
 	position: relative;
 	margin-bottom: 10px;
 }
-#growingBelly .angleNav {
+.growingBelly .angleNav {
 	position: absolute;
 	background: rgba(0,0,0,.5);
 	color: rgba(255,255,255,1);
@@ -130,18 +130,18 @@ a:hover {
 	right: 0;
 }
 
-#growingBelly .angleNav {
+.growingBelly .angleNav {
 	display: block;
 	text-align: center;
 }
 
-#growingBelly .angleNav #prevAngle,
-#growingBelly .angleNav #nextAngle {
+.growingBelly .angleNav #prevAngle,
+.growingBelly .angleNav #nextAngle {
 	cursor: pointer;
 }
 
-#growingBelly .angleNav #prevAngle:before,
-#growingBelly .angleNav #nextAngle:after {
+.growingBelly .angleNav #prevAngle:before,
+.growingBelly .angleNav #nextAngle:after {
 	content: '';
 	height: 0;
 	width: 0;
@@ -151,45 +151,45 @@ a:hover {
 	border: 15px solid transparent;
 	border-right-color: rgba(255,255,255,.8);
 }
-#growingBelly .angleNav #nextAngle:after {
+.growingBelly .angleNav #nextAngle:after {
 	border-right-color: transparent;
 	border-left-color: rgba(255,255,255,.8);
 	left: auto;
 	right: -10px;
 }
 
-#growingBelly .angleNav:hover {
+.growingBelly .angleNav:hover {
 	color: rgba(255,255,255,1);
 	background-color: rgba(0,0,0,.7);
 }
-#growingBelly .angleNav:hover #nextAngle:after{
+.growingBelly .angleNav:hover #nextAngle:after{
     border-left-color: rgba(255,255,255,1);
 }
-#growingBelly .angleNav:hover #prevAngle:before{
+.growingBelly .angleNav:hover #prevAngle:before{
     border-right-color: rgba(255,255,255,1);
 }
 
-#growingBelly h3 {
+.growingBelly h3 {
 	padding: 10px;
 }
-#growingBelly #accordion {
+.growingBelly #accordion {
 	color: #fff;
 }
-#growingBelly #accordion img {
+.growingBelly #accordion img {
 	max-width: 100%;
 }
-#growingBelly #accordion ul {
+.growingBelly #accordion ul {
 	margin:0;
 	padding:0;
 	list-style: none;
 }
-#growingBelly #accordion ul li {
+.growingBelly #accordion ul li {
 	padding: 5px 10px 5px 50px;
 	display: block;
 	cursor: pointer;
 	position: relative;
 }
-#growingBelly #accordion ul li.selected:before {
+.growingBelly #accordion ul li.selected:before {
 	content: '';
 	position: absolute;
 	top: 8px;
@@ -199,23 +199,23 @@ a:hover {
 	width: 15px;
 	height: 15px;
 }
-#growingBelly #accordion ul li:hover {
+.growingBelly #accordion ul li:hover {
 	background-color: rgba(14,119,182,.3);
 }
-#growingBelly #accordion h4 {
+.growingBelly #accordion h4 {
 	margin: 0;
 	padding: 10px 10px 10px 30px;
 	border-top: 1px solid #AFDEFA;
 	position: relative;
 }
-#growingBelly #accordion h4#model1Name {
+.growingBelly #accordion h4#model1Name {
 	background: rgba(14,119,182,.5) url(../images/model1Thumbnail.png) right center no-repeat;
 }
-#growingBelly #accordion h4#model2Name {
+.growingBelly #accordion h4#model2Name {
 	background: rgba(14,119,182,.5) url(../images/model2Thumbnail.png) right center no-repeat;
 }
-#growingBelly #accordion h4#model1Name.ui-state-active:before,
-#growingBelly #accordion h4#model2Name.ui-state-active:before {
+.growingBelly #accordion h4#model1Name.ui-state-active:before,
+.growingBelly #accordion h4#model2Name.ui-state-active:before {
 	content: '';
 	position: absolute;
 	top: 10px;
@@ -225,12 +225,12 @@ a:hover {
 	width: 20px;
 	height: 20px;
 }
-#growingBelly #accordion h4 img {
+.growingBelly #accordion h4 img {
 	display: block;
 	margin-top: 10px;
 }
-#growingBelly #accordion h4#model1Name:hover,
-#growingBelly #accordion h4#model2Name:hover {
+.growingBelly #accordion h4#model1Name:hover,
+.growingBelly #accordion h4#model2Name:hover {
 	background-color: rgba(14,119,182,.9);
 	cursor: pointer;
 }
@@ -252,11 +252,11 @@ a:hover {
   position: relative;
 }
 
-#growingBelly #photos {
+.growingBelly #photos {
 	width: auto;
 	max-height: 320px;
 }
-#growingBelly #photos img {
+.growingBelly #photos img {
 	max-width: 100%;
     /*border: 10px solid rgba(71,163,218,.5);*/
 }
@@ -264,12 +264,12 @@ a:hover {
 
 
 /* styling month list
-#growingBelly .months {
+.growingBelly .months {
     position: relative;
     z-index: 102;
     width: 100%;
 }
-#growingBelly .months ul {
+.growingBelly .months ul {
     position: absolute;
     top: 0;
     left: 0;
@@ -279,45 +279,45 @@ a:hover {
     padding: 0;
     font-size: 0.8em;
 }
-#growingBelly .months li {
+.growingBelly .months li {
     display: none;
     margin: 0;
 }
-#growingBelly .months .current {
+.growingBelly .months .current {
     display: block;
 }
-#growingBelly .months a {
+.growingBelly .months a {
     display: block;
     padding: 10px 10px 10px 30px;
     text-align: left;
     cursor: pointer;
 }
-#growingBelly .months a:hover {
+.growingBelly .months a:hover {
     color: #fff;
     background: rgba(14,119,182,.9);
 }
-#growingBelly .months .current a {
+.growingBelly .months .current a {
     background: none;
     color: #fff;
 }
 
-#growingBelly .months ul:hover {
+.growingBelly .months ul:hover {
     background-image: none;
 }
-#growingBelly .months ul:hover li {
+.growingBelly .months ul:hover li {
     display: block;
     margin: 0 0 5px;
 }
-#growingBelly .months ul:hover .current {
+.growingBelly .months ul:hover .current {
     background: url(../images/icon-check.png) no-repeat 10px center;
 }
 
-#growingBelly .months.right ul {
+.growingBelly .months.right ul {
     left: auto;
     right: 0;
 }
 
-#growingBelly .months.center ul {
+.growingBelly .months.center ul {
     left: 50%;
     margin-left: -90px;
 }

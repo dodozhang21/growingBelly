@@ -11,7 +11,7 @@
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body class="cbp-spmenu-push">
-		<section id="growingBelly" class="main">
+		<section class="growingBelly" class="main">
 			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left menuLeft">
 				<header>
 					<h3>Models</h3>
@@ -76,9 +76,12 @@
 						</nav>
 					</div><!-- #photos -->
 				</div><!-- .photoWrapper -->
-				<article class="monthText"></article>
 			</section>
-		</section><!-- #growingBelly -->
+		</section>
+		<section class="growingBelly">
+			<article class="monthText"></article>
+		</section>
+		<!-- .growingBelly -->
 
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js"></script>
@@ -87,17 +90,17 @@
 
 		<script>
 			// init global
-			var menuLeft = $('#growingBelly .menuLeft')
-				,showSelection = $('#growingBelly .showSelection')
-				,monthSelection = $('#growingBelly .months')
-				,angle = $('#growingBelly #angle')
-				,monthText = $('#growingBelly .monthText')
-				,angleSelect = $('#growingBelly #accordion .angles li')
-				,accordion = $('#growingBelly #accordion')
-				,prevAngle = $("#growingBelly #prevAngle")
-				,nextAngle = $("#growingBelly #nextAngle")
-				,swipeWrap = $('#growingBelly #photos .swipe-wrap')
-				,selectionTip = $('#growingBelly #selectionOutline,#growingBelly #selectionTip')
+			var menuLeft = $('.growingBelly .menuLeft')
+				,showSelection = $('.growingBelly .showSelection')
+				,monthSelection = $('.growingBelly .months')
+				,angle = $('.growingBelly #angle')
+				,monthText = $('.growingBelly .monthText')
+				,angleSelect = $('.growingBelly #accordion .angles li')
+				,accordion = $('.growingBelly #accordion')
+				,prevAngle = $(".growingBelly #prevAngle")
+				,nextAngle = $(".growingBelly #nextAngle")
+				,swipeWrap = $('.growingBelly #photos .swipe-wrap')
+				,selectionTip = $('.growingBelly #selectionOutline,.growingBelly #selectionTip')
 				,body = document.body
 				,monthSelected = defaultMonth
 				,modelSelected = defaultModel
@@ -110,7 +113,7 @@
 				// init
 				loadSelection();
                 // selection tip fade out
-                $(document).on('click touch tap', '#growingBelly', function() {
+                $(document).on('click touch tap', '.growingBelly', function() {
                     hideSelectionTip();
                 });
                 $(selectionTip).show();
@@ -242,7 +245,7 @@
 			}
 
             function startSlide(index) {
-                return $('#growingBelly #photos').Swipe({
+                return $('.growingBelly #photos').Swipe({
                     startSlide: index,
                     speed: 400,
                     //auto: 3000,
