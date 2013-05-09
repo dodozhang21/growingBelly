@@ -11,7 +11,7 @@
 		<script src="js/modernizr.custom.js"></script>
 	</head>
 	<body class="cbp-spmenu-push">
-		<section id="growingBelly" class="main">
+		<section class="growingBelly main">
 			<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left menuLeft">
 				<header>
 					<h3>Models</h3>
@@ -22,10 +22,10 @@
 					</h4>
 					<aside id="Kat">
 						<ul class="angles">
-							<li angle="Back" model="Kat">Back</li>
 							<li angle="Front" model="Kat">Front</li>
 							<li angle="Left" model="Kat">Left</li>
 							<li angle="Right" model="Kat">Right</li>
+							<li angle="Side" model="Kat">Side</li>
 						</ul>
 					</aside>
 					<h4 id="model2Name">
@@ -33,10 +33,10 @@
 					</h4>
 					<aside id="Jessica">
 						<ul class="angles">
-							<li angle="Back" model="Jessica">Back</li>
 							<li angle="Front" model="Jessica">Front</li>
 							<li angle="Left" model="Jessica">Left</li>
 							<li angle="Right" model="Jessica">Right</li>
+							<li angle="Side" model="Jessica">Side</li>
 						</ul>
 					</aside>
 				</section>
@@ -51,7 +51,7 @@
 				</div>
 				<div class="right">
                     <select class="months">
-                        <option value="1">Month 1</option>
+                        <option value="1" selected>Month 1</option>
                         <option value="2">Month 2</option>
                     </select>
 				</div>
@@ -68,9 +68,13 @@
 						</nav>
 					</div><!-- #photos -->
 				</div><!-- .photoWrapper -->
-				<article class="monthText"></article>
 			</section>
-		</section><!-- #growingBelly -->
+		</section><!-- .growingBelly -->
+
+		
+		<section class="growingBelly">
+			<article class="monthText"></article>
+		</section>
 
 		<script type="text/javascript" src="//zeptojs.com/zepto.min.js"></script>
 
@@ -90,17 +94,17 @@
 
 		<script>
 			// init global
-			var menuLeft = $('#growingBelly .menuLeft')
-				,showSelection = $('#growingBelly .showSelection')
-				,monthSelection = $('#growingBelly .months')
-				,angle = $('#growingBelly #angle')
-				,monthText = $('#growingBelly .monthText')
-				,angleSelect = $('#growingBelly #accordion .angles li')
-				,accordion = $('#growingBelly #accordion')
-				,prevAngle = $("#growingBelly #prevAngle")
-				,nextAngle = $("#growingBelly #nextAngle")
-				,swipeWrap = $('#growingBelly #photos .swipe-wrap')
-				,selectionTip = $('#growingBelly #selectionOutline,#growingBelly #selectionTip')
+			var menuLeft = $('.growingBelly .menuLeft')
+				,showSelection = $('.growingBelly .showSelection')
+				,monthSelection = $('.growingBelly .months')
+				,angle = $('.growingBelly #angle')
+				,monthText = $('.growingBelly .monthText')
+				,angleSelect = $('.growingBelly #accordion .angles li')
+				,accordion = $('.growingBelly #accordion')
+				,prevAngle = $(".growingBelly #prevAngle")
+				,nextAngle = $(".growingBelly #nextAngle")
+				,swipeWrap = $('.growingBelly #photos .swipe-wrap')
+				,selectionTip = $('.growingBelly #selectionOutline,.growingBelly #selectionTip')
 				,body = document.body
 				,monthSelected = defaultMonth
 				,modelSelected = defaultModel
@@ -113,7 +117,7 @@
 				// init
 				loadSelection();
                 // selection tip fade out
-                $(document).on('click touch tap', '#growingBelly', function() {
+                $(document).on('click touch tap', '.growingBelly', function() {
                     hideSelectionTip();
                 });
                 $(selectionTip).show();

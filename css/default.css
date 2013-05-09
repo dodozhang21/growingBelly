@@ -31,7 +31,7 @@ a:hover {
 
 .growingBelly {
 	margin: 10px;
-	max-width: 370px;
+	max-width: 300px;
 }
 
 .growingBelly .left {
@@ -207,6 +207,8 @@ a:hover {
 	padding: 10px 10px 10px 30px;
 	border-top: 1px solid #AFDEFA;
 	position: relative;
+	font-family: 'Lato', Calibri, Arial, sans-serif;
+	color: #fff;
 }
 .growingBelly #accordion h4#model1Name {
 	background: rgba(14,119,182,.5) url(../images/model1Thumbnail.png) right center no-repeat;

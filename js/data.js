@@ -6,7 +6,7 @@ var months =
                 "name": "Kat",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -15,7 +15,7 @@ var months =
                 "name": "Jessica",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -31,7 +31,7 @@ var months =
                 "name": "Kat",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -40,7 +40,7 @@ var months =
                 "name": "Jessica",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -56,7 +56,7 @@ var months =
                 "name": "Kat",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -65,7 +65,7 @@ var months =
                 "name": "Jessica",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -81,7 +81,7 @@ var months =
                 "name": "Kat",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -90,7 +90,7 @@ var months =
                 "name": "Jessica",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -106,7 +106,7 @@ var months =
                 "name": "Kat",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -115,7 +115,7 @@ var months =
                 "name": "Jessica",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -131,7 +131,7 @@ var months =
                 "name": "Kat",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -140,7 +140,7 @@ var months =
                 "name": "Jessica",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -156,7 +156,7 @@ var months =
                 "name": "Kat",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -165,7 +165,7 @@ var months =
                 "name": "Jessica",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -181,7 +181,7 @@ var months =
                 "name": "Kat",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -190,7 +190,7 @@ var months =
                 "name": "Jessica",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -206,7 +206,7 @@ var months =
                 "name": "Kat",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -215,7 +215,7 @@ var months =
                 "name": "Jessica",
                 "angles": [
                     "Front",
-                    "Back",
+                    "Side",
                     "Left",
                     "Right"
                 ]
@@ -232,6 +232,6 @@ var defaultMonth = "1"
 ,defaultAngle = "Front"
 ,imageExtension = ".png"
 ,imagePath = "images/"
-,imageWidth = "350"
+,imageWidth = "300"
 ,imageHeight = "300"
 ;
