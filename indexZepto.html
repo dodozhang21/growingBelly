@@ -68,13 +68,9 @@
 						</nav>
 					</div><!-- #photos -->
 				</div><!-- .photoWrapper -->
+				<article class="monthText"></article>
 			</section>
 		</section><!-- .growingBelly -->
-
-		
-		<section class="growingBelly">
-			<article class="monthText"></article>
-		</section>
 
 		<script type="text/javascript" src="//zeptojs.com/zepto.min.js"></script>
 
@@ -173,7 +169,7 @@
 				modelSelected = model;
 				angleSelected = modelAngle;
 
-				$(angle).html(angleSelected);
+				//$(angle).html(angleSelected);
 				selectOnMenu();
 			}
 
@@ -233,8 +229,11 @@
 					index++;
 				}
 
+				// change the month selection to monthSelected
+				$(monthSelection).val(monthSelected);
+
 				$(swipeWrap).html(swipeHtml);
-				$(angle).html(angleToUse);
+				//$(angle).html(angleToUse);
 				selectOnMenu();
 				$(monthText).html(monthToUse.text);
                 mySwipe = startSlide(selectedAngleIndex);

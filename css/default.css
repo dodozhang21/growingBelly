@@ -1,37 +1,27 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
-@font-face {
-	font-family: 'fontawesome';
-	src:url('../fonts/fontawesome.eot');
-	src:url('../fonts/fontawesome.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/fontawesome.svg#fontawesome') format('svg'),
-		url('../fonts/fontawesome.woff') format('woff'),
-		url('../fonts/fontawesome.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-body, html { font-size: 100%; 	padding: 0; margin: 0;}
 
 body {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    color: #47a3da;
+    color: #666666;
 
 }
 
 a {
-	color: #f0f0f0;
+	color: #0091C2;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #000;
+	color: #0091C2;
+	text-decoration: underline;
 }
 
 
 .growingBelly {
 	margin: 10px;
 	max-width: 300px;
+	border: 1px solid #f9c8d3;
+    border-radius: 8px 3px 8px 3px / 2px 18px 2px 18px;
+	padding: 10px;
 }
 
 .growingBelly .left {
@@ -43,7 +33,7 @@ a:hover {
 .growingBelly .showSelection,
 .growingBelly .months {
     border: none;
-    background: #47a3da;
+    background: #8fc357;
     color: #fff;
     padding: 5px 10px;
     cursor: pointer;
@@ -63,14 +53,14 @@ a:hover {
     position: relative;
 }
 .growingBelly .showSelection:hover {
-    background-color: #258ecd;
+    background-color: #0091c2;
 }
 
 .growingBelly .showSelection.active {
-    background-color: #0d77b6;
+    background-color: #0091c2;
 }
 .growingBelly .showSelection {
-	background: #47a3da url(../images/menu_icon.svg) center center no-repeat;
+	background: #8fc357 url(../images/menu_icon.svg) center center no-repeat;
 	padding: 0;
 	height: 26px;
 }
@@ -83,7 +73,7 @@ a:hover {
     left: -10px;
     width: 100%;
     height: 100%;
-    border: 10px solid rgba(0,0,0,.9);
+    border: 10px solid rgba(239,0,91,.9);
     border-radius: 5px;
 }
 .growingBelly #selectionTip {
@@ -91,7 +81,7 @@ a:hover {
     top: 50px;
     left: 20px;
     white-space: nowrap;
-    background: rgba(0,0,0,.9);
+    background: rgba(239,0,91,.9);
     border-radius: 5px;
     padding: 10px;
     z-index: 100;
@@ -99,7 +89,7 @@ a:hover {
 .growingBelly #selectionTip:before {
     content: '';
     border: 10px solid transparent;
-    border-bottom-color: rgba(0,0,0,.9);
+    border-bottom-color: rgba(239,0,91,.9);
     position: absolute;
     top: -20px;
     left: 20px;
@@ -114,18 +104,14 @@ a:hover {
 
 .growingBelly .content {
     clear:both;
+	position: relative;
 }
 .growingBelly .photoWrapper {
-	position: relative;
 	margin-bottom: 10px;
 }
 .growingBelly .angleNav {
 	position: absolute;
-	background: rgba(0,0,0,.5);
-	color: rgba(255,255,255,1);
-	text-shadow: 0 1px 1px rgba(0,0,0,.8);
-	padding: 10px;
-	top: 60%;
+	top: 50%;
 	left: 0;
 	right: 0;
 }
@@ -158,10 +144,6 @@ a:hover {
 	right: -10px;
 }
 
-.growingBelly .angleNav:hover {
-	color: rgba(255,255,255,1);
-	background-color: rgba(0,0,0,.7);
-}
 .growingBelly .angleNav:hover #nextAngle:after{
     border-left-color: rgba(255,255,255,1);
 }
@@ -169,14 +151,23 @@ a:hover {
     border-right-color: rgba(255,255,255,1);
 }
 
-.growingBelly h3 {
-	padding: 10px;
+
+.growingBelly nav.menuLeft {
+	color: #fff;
+	background: #519ab4;
+}
+.growingBelly nav.menuLeft h3 {
+	color: #fff;
+	background: #8fc357;
+	font-weight: bold;
+	padding: 20px 20px 15px 20px;
 }
 .growingBelly #accordion {
-	color: #fff;
+	background: #519ab4 url(../images/layout-whimsy-sprite-new.svg) repeat-x left -270px;
+	padding-top: 15px;
 }
-.growingBelly #accordion img {
-	max-width: 100%;
+.growingBelly #accordion aside {
+	background: #519ab4;
 }
 .growingBelly #accordion ul {
 	margin:0;
@@ -200,22 +191,9 @@ a:hover {
 	height: 15px;
 }
 .growingBelly #accordion ul li:hover {
-	background-color: rgba(14,119,182,.3);
+	background-color: #b2deed;
 }
-.growingBelly #accordion h4 {
-	margin: 0;
-	padding: 10px 10px 10px 30px;
-	border-top: 1px solid #AFDEFA;
-	position: relative;
-	font-family: 'Lato', Calibri, Arial, sans-serif;
-	color: #fff;
-}
-.growingBelly #accordion h4#model1Name {
-	background: rgba(14,119,182,.5) url(../images/model1Thumbnail.png) right center no-repeat;
-}
-.growingBelly #accordion h4#model2Name {
-	background: rgba(14,119,182,.5) url(../images/model2Thumbnail.png) right center no-repeat;
-}
+
 .growingBelly #accordion h4#model1Name.ui-state-active:before,
 .growingBelly #accordion h4#model2Name.ui-state-active:before {
 	content: '';
@@ -231,12 +209,30 @@ a:hover {
 	display: block;
 	margin-top: 10px;
 }
-.growingBelly #accordion h4#model1Name:hover,
-.growingBelly #accordion h4#model2Name:hover {
-	background-color: rgba(14,119,182,.9);
+.growingBelly #accordion h4 {
+	background-color: #008bb4;
+	background-position: right center;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 9px 10px 9px 30px;
+	position: relative;
+	color: #fff;
+	border-top: 1px solid #519ab4;
+	/*url("http://images.meredith.com/parents/images/template/shell/2012/mobile-nav-sprite.svg") no-repeat scroll 50% -117px transparent*/;
+}
+.growingBelly #accordion h4:hover {
+	background-color: #008bb4;
 	cursor: pointer;
 }
-
+.growingBelly #accordion h4#model1Name {
+	background-image: url(../images/model1Thumbnail.png);
+}
+.growingBelly #accordion h4#model2Name {
+	background-image: url(../images/model2Thumbnail.png);
+}
+.growingBelly .monthText {
+	font: 100 15px/20px Georgia,"Times New Roman",Times,serif;
+}
 
 /* swipe */
 .swipe {
@@ -260,10 +256,19 @@ a:hover {
 }
 .growingBelly #photos img {
 	max-width: 100%;
-    /*border: 10px solid rgba(71,163,218,.5);*/
+    background: url(http://images.meredith.com/parents/images/template/shell/2012/loading/loading-circle2-green.gif) center center no-repeat;
 }
 
 
+.storyIntro {
+    font: 100 15px/20px Georgia,"Times New Roman",Times,serif;
+    margin: 0.5em 0;
+}
+
+#photos {
+	width: 300px;
+	height: 300px;
+}
 
 /* styling month list
 .growingBelly .months {
