@@ -1,5 +1,3 @@
-
-
 body {
     color: #666666;
 
@@ -17,7 +15,7 @@ a:hover {
 
 
 .growingBelly {
-	margin: 10px;
+	margin: 10px 0;
 	max-width: 300px;
 	border: 1px solid #f9c8d3;
     border-radius: 8px 3px 8px 3px / 2px 18px 2px 18px;
@@ -30,54 +28,60 @@ a:hover {
 .growingBelly .right {
     margin-left: 52px;
 }
-.growingBelly .showSelection,
-.growingBelly .months {
-    border: none;
-    background: #8fc357;
-    color: #fff;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 13px;
-    outline: none;
+.growingBelly .selection {
+    position: relative;
 }
+
 .growingBelly .months {
     width: 100%;
     height: 26px;
     line-height: 22px; /* for safari */
     margin-bottom: 10px;
+
+	border: 1px solid #B2DEED;
+    border-radius: 8px 3px 8px 3px / 2px 18px 2px 18px;
+    padding: 3px;
 }
 .growingBelly .months:focus {
     outline: none;
 }
 .growingBelly .showSelection {
-    position: relative;
-}
-.growingBelly .showSelection:hover {
-    background-color: #0091c2;
-}
+	border: none;
+    background: #0091c2;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 13px;
+    outline: none;
 
-.growingBelly .showSelection.active {
-    background-color: #0091c2;
-}
-.growingBelly .showSelection {
-	background: #8fc357 url(../images/menu_icon.svg) center center no-repeat;
+	background: #0091c2 url(../images/tiny-icon-sprite-20130510.svg) center -917px no-repeat;
+
 	padding: 0;
 	height: 26px;
+	position: absolute;
 }
-.growingBelly .showSelection .text {
-	visibility: hidden;
+.growingBelly .showSelection:hover,
+.growingBelly .showSelection.active {
+	background: #b2deed url(../images/tiny-icon-sprite-20130510.svg) center -957px no-repeat;
 }
-.growingBelly #selectionOutline {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 100%;
-    height: 100%;
-    border: 10px solid rgba(239,0,91,.9);
+.growingBelly .showSelection.highlighted {
+	border: 10px solid rgba(239,0,91,.9);
     border-radius: 5px;
+    left: -10px;
+    top: -10px;
 }
-.growingBelly #selectionTip {
+.growingBelly .showSelection.highlighted:before {
+	content: '';
+    border: 10px solid transparent;
+    border-bottom-color: rgba(239,0,91,.9);
     position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 100;
+}
+.growingBelly .showSelection.highlighted:after {
+	content: "Tap here for more models";
+	position: absolute;
     top: 50px;
     left: 20px;
     white-space: nowrap;
@@ -86,6 +90,10 @@ a:hover {
     padding: 10px;
     z-index: 100;
 }
+.growingBelly .showSelection .text {
+	visibility: hidden;
+}
+
 .growingBelly #selectionTip:before {
     content: '';
     border: 10px solid transparent;
@@ -107,7 +115,7 @@ a:hover {
 	position: relative;
 }
 .growingBelly .photoWrapper {
-	margin-bottom: 10px;
+	
 }
 .growingBelly .angleNav {
 	position: absolute;
@@ -154,20 +162,18 @@ a:hover {
 
 .growingBelly nav.menuLeft {
 	color: #fff;
-	background: #519ab4;
+	background: #EBEAE6;
 }
 .growingBelly nav.menuLeft h3 {
-	color: #fff;
-	background: #8fc357;
-	font-weight: bold;
+	color: #00B9A4;
+	background: #EBEAE6;
 	padding: 20px 20px 15px 20px;
 }
-.growingBelly #accordion {
-	background: #519ab4 url(../images/layout-whimsy-sprite-new.svg) repeat-x left -270px;
-	padding-top: 15px;
-}
+
 .growingBelly #accordion aside {
-	background: #519ab4;
+	background: #EBEAE6;
+	padding: 0;
+	border: 0;
 }
 .growingBelly #accordion ul {
 	margin:0;
@@ -179,59 +185,50 @@ a:hover {
 	display: block;
 	cursor: pointer;
 	position: relative;
+	border-bottom: 1px dashed #B2DEED;
+	color: #0091c2;
 }
-.growingBelly #accordion ul li.selected:before {
-	content: '';
-	position: absolute;
-	top: 8px;
-	left: 30px;
-	background-image: url(../images/checkmark.svg);
-    background-size: cover;
-	width: 15px;
-	height: 15px;
-}
-.growingBelly #accordion ul li:hover {
-	background-color: #b2deed;
+.growingBelly #accordion ul li.selected {
+	background: #C7E7F2 url(../images/tiny-icon-sprite-20130510.svg) 30px -848px no-repeat;
 }
 
-.growingBelly #accordion h4#model1Name.ui-state-active:before,
-.growingBelly #accordion h4#model2Name.ui-state-active:before {
-	content: '';
-	position: absolute;
-	top: 10px;
-	left: 5px;
-	background-image: url(../images/checkmark.svg);
-    background-size: cover;
-	width: 20px;
-	height: 20px;
-}
 .growingBelly #accordion h4 img {
 	display: block;
 	margin-top: 10px;
 }
+.growingBelly #accordion h4.ui-state-over,
 .growingBelly #accordion h4 {
-	background-color: #008bb4;
+	background-color: #B2DEED;
 	background-position: right center;
 	background-repeat: no-repeat;
 	margin: 0;
 	padding: 9px 10px 9px 30px;
 	position: relative;
-	color: #fff;
-	border-top: 1px solid #519ab4;
-	/*url("http://images.meredith.com/parents/images/template/shell/2012/mobile-nav-sprite.svg") no-repeat scroll 50% -117px transparent*/;
-}
-.growingBelly #accordion h4:hover {
-	background-color: #008bb4;
+	color: #0091c2;
+	border: 0;
+	border-top: 1px dashed #B2DEED;
 	cursor: pointer;
+	border-radius: 0;
+	font: 400 18px/22px Georgia,"Times New Roman",Times,serif;
 }
-.growingBelly #accordion h4#model1Name {
-	background-image: url(../images/model1Thumbnail.png);
+.growingBelly #accordion h4.ui-state-active {
+	color: #fff;
+	background: #0091c2 url(../images/tiny-icon-sprite-20130510.svg) 10px -876px no-repeat;
 }
-.growingBelly #accordion h4#model2Name {
-	background-image: url(../images/model2Thumbnail.png);
+
+.growingBelly #accordion h4:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.growingBelly #accordion h4.model1Name:after {
+	content: url(../images/model1Thumbnail.png);
+}
+.growingBelly #accordion h4.model2Name:after {
+	content: url(../images/model2Thumbnail.png);
 }
 .growingBelly .monthText {
-	font: 100 15px/20px Georgia,"Times New Roman",Times,serif;
+	padding: 10px;
 }
 
 /* swipe */
@@ -256,6 +253,7 @@ a:hover {
 }
 .growingBelly #photos img {
 	max-width: 100%;
+	height: auto;
     background: url(http://images.meredith.com/parents/images/template/shell/2012/loading/loading-circle2-green.gif) center center no-repeat;
 }
 
@@ -265,67 +263,28 @@ a:hover {
     margin: 0.5em 0;
 }
 
-#photos {
-	width: 300px;
-	height: 300px;
+/* right push menu */
+body #headWrapper {
+	background: url("http://images.meredith.com/parents/images/template/shell/2012/layout-whimsy-sprite-new.svg") repeat-x scroll 0 62px, 
+	url("http://images.meredith.com/parents/images/template/shell/2012/parallax-sprite-xl.svg") repeat-x scroll 80% -280px, 
+	url("http://images.meredith.com/parents/images/template/shell/2012/parallax-sprite-xl.svg") repeat-x scroll 60% -510px white;
+	position: fixed;
+	width: 100%;
+	z-index: 200;
 }
-
-/* styling month list
-.growingBelly .months {
-    position: relative;
-    z-index: 102;
-    width: 100%;
+#navButton {
+	position: absolute;
+	top: 0;
+	right: 5px;
+	width: 40px;
+	height: 32px;
+	background: #8FC357 url("../images/tiny-icon-sprite-20130510.svg") no-repeat scroll center -915px;
+	border-radius: 0 0 5px 5px;
+	cursor: pointer;
 }
-.growingBelly .months ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #47A3DA;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 0.8em;
+#navButton span {
+	visibility: hidden;
 }
-.growingBelly .months li {
-    display: none;
-    margin: 0;
+body #siteHeader {
+	border-bottom: 10px solid #8fc357;
 }
-.growingBelly .months .current {
-    display: block;
-}
-.growingBelly .months a {
-    display: block;
-    padding: 10px 10px 10px 30px;
-    text-align: left;
-    cursor: pointer;
-}
-.growingBelly .months a:hover {
-    color: #fff;
-    background: rgba(14,119,182,.9);
-}
-.growingBelly .months .current a {
-    background: none;
-    color: #fff;
-}
-
-.growingBelly .months ul:hover {
-    background-image: none;
-}
-.growingBelly .months ul:hover li {
-    display: block;
-    margin: 0 0 5px;
-}
-.growingBelly .months ul:hover .current {
-    background: url(../images/icon-check.png) no-repeat 10px center;
-}
-
-.growingBelly .months.right ul {
-    left: auto;
-    right: 0;
-}
-
-.growingBelly .months.center ul {
-    left: 50%;
-    margin-left: -90px;
-}
- */

@@ -17,18 +17,29 @@ var menuLeft = $('.growingBelly .menuLeft')
 	;
 
 var mySwipe = startSlide(0);
+var selectionTipShown = 0;
+$(window).scroll(function(event) {
+  
+  $(showSelection).each(function(i, el) {
+    var el = $(el);
+    if (el.visible(true) && !selectionTipShown) {
+      el.addClass("highlighted"); 
+	  setTimeout(function() {
+		hideSelectionTip();
+	  }, 3000);
+	  selectionTipShown = 1;
+    } 
+  });
+  
+});
 
 $(function() {
 	// init
 	loadSelection();
 	// selection tip fade out
-	$(document).on('click touch tap', '.growingBelly', function() {
+	$(document).on('click touchstart tap', '.growingBelly', function() {
 		hideSelectionTip();
 	});
-	$(selectionTip).show();
-		setTimeout(function() {
-		$(selectionTip).fadeOut();
-	}, 3000);
 
 	$(prevAngle).click(function() {mySwipe.prev();});
 	$(nextAngle).click(function() {mySwipe.next();});
@@ -56,7 +67,7 @@ $(function() {
 });
 
 function hideSelectionTip() {
-	$(selectionTip).hide();
+	$(showSelection).removeClass("highlighted");
 }
 
 function toggleMenu() {
