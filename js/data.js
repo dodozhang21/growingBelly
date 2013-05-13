@@ -1,4 +1,4 @@
-var months = 
+var growingBellyMonths = 
 {
     "1": {
         "models": [
@@ -227,11 +227,11 @@ var months =
 }
 ;
 
-var defaultMonth = "1"
-,defaultModel = "Kat"
-,defaultAngle = "Front"
-,imageExtension = ".png"
-,imagePath = "images/"
-,imageWidth = "300"
-,imageHeight = "300"
+var growingBellyDefaultMonth = "1"
+,growingBellyDefaultModel = "Kat"
+,growingBellyDefaultAngle = "Front"
+,growingBellyImageExtension = ".png"
+,growingBellyImagePath = "images/"
+,growingBellyImageWidth = "300"
+,growingBellyImageHeight = "300"
 ;

@@ -268,12 +268,9 @@ body #headWrapper {
 	background: url("http://images.meredith.com/parents/images/template/shell/2012/layout-whimsy-sprite-new.svg") repeat-x scroll 0 62px, 
 	url("http://images.meredith.com/parents/images/template/shell/2012/parallax-sprite-xl.svg") repeat-x scroll 80% -280px, 
 	url("http://images.meredith.com/parents/images/template/shell/2012/parallax-sprite-xl.svg") repeat-x scroll 60% -510px white;
-	position: fixed;
-	width: 100%;
-	z-index: 200;
 }
-#navButton {
-	position: absolute;
+#mainNavButton {
+	position: fixed;
 	top: 0;
 	right: 5px;
 	width: 40px;
@@ -281,9 +278,16 @@ body #headWrapper {
 	background: #8FC357 url("../images/tiny-icon-sprite-20130510.svg") no-repeat scroll center -915px;
 	border-radius: 0 0 5px 5px;
 	cursor: pointer;
+	z-index: 599;
 }
-#navButton span {
+#mainNavButton span {
 	visibility: hidden;
+}
+#mainNavButton.active {
+	right: 245px;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
 body #siteHeader {
 	border-bottom: 10px solid #8fc357;
