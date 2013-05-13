@@ -59,6 +59,7 @@ a:hover {
 	padding: 0;
 	height: 26px;
 	position: absolute;
+	border-radius: 5px;
 }
 .growingBelly .showSelection:hover,
 .growingBelly .showSelection.active {
@@ -181,7 +182,8 @@ a:hover {
 	list-style: none;
 }
 .growingBelly #accordion ul li {
-	padding: 5px 10px 5px 50px;
+	padding: 0.75em 1em 0.75em 50px;
+	font-size: 1.2em;
 	display: block;
 	cursor: pointer;
 	position: relative;
@@ -189,9 +191,11 @@ a:hover {
 	color: #0091c2;
 }
 .growingBelly #accordion ul li.selected {
-	background: #C7E7F2 url(../images/tiny-icon-sprite-20130510.svg) 30px -848px no-repeat;
+	background: #C7E7F2 url(../images/tiny-icon-sprite-20130510.svg) 30px -845px no-repeat;
 }
-
+.growingBelly #accordion h4:focus {
+	outline: none;
+}
 .growingBelly #accordion h4 img {
 	display: block;
 	margin-top: 10px;
@@ -291,4 +295,55 @@ body #headWrapper {
 }
 body #siteHeader {
 	border-bottom: 10px solid #8fc357;
+}
+#siteNavContainer {
+	width: 240px;
+	background: #8FC357;
+	z-index: 599;
+	overflow-y: auto;
+}
+#siteNavContainer h4 {
+	color: #fff;
+	padding: 10px 20px 10px 10px;
+	cursor: pointer;
+	border-bottom: 1px dashed #fff;
+	position: relative;
+}
+#siteNavContainer h4:focus {
+	outline: none;
+}
+#siteNavContainer ul {
+	list-style: none;
+}
+#siteNavContainer ul li a {
+	color: #0091C2;
+	border-bottom: 1px dashed #B2DEED;
+	padding: 0.75em 1em;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	background: #F0F9FB;
+}
+#siteNavContainer ul li a:hover {
+	color: #0091C2;
+	background: #fff;
+	text-decoration: none;
+}
+#siteNavContainer .searchTerm {
+	width: 161px;
+}
+#siteNavContainer h4.ui-state-default:after {
+	content: '';
+	border: 6px solid transparent;
+	border-left-color: #fff;
+	position: absolute;
+	top: 16px;
+	right: 5px;
+}
+#siteNavContainer h4.ui-state-active:after {
+	content: '';
+	border: 6px solid transparent;
+	border-top-color: #fff;
+	position: absolute;
+	top: 20px;
+	right: 10px;
 }

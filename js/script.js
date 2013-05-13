@@ -1,6 +1,6 @@
 // main
 var mainNavMenu = $('#mainNavButton') 
-	,mainNavMenuRight = $('#siteNavContainer .cbp-spmenu-right')
+	,mainNavMenuRight = $('#siteNavContainer')
 	,body = document.body;
 
 
@@ -96,6 +96,9 @@ $(function() {
 		loadSelection();
 		return false;
 	});
+
+	// main nav accordion
+	$('#mainNavAccordion').accordion({'active':false,autoHeight:false,collapsible: true});
 
 });
 
