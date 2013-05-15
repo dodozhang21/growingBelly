@@ -1,0 +1,80 @@
+.growingBelly nav.menuLeft {
+	color: #fff;
+	background: #EBEAE6;
+	float: left;
+	width: 240px;
+}
+.growingBelly nav.menuLeft h3 {
+	color: #00B9A4;
+	background: #EBEAE6;
+	padding: 20px 20px 15px 20px;
+}
+
+.growingBelly #accordion aside {
+	background: #EBEAE6;
+	padding: 0;
+	border: 0;
+}
+.growingBelly #accordion ul {
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+.growingBelly #accordion ul li {
+	padding: 0.75em 1em 0.75em 50px;
+	font-size: 1.2em;
+	display: block;
+	cursor: pointer;
+	position: relative;
+	border-bottom: 1px dashed #B2DEED;
+	color: #0091c2;
+}
+.growingBelly #accordion ul li.selected {
+	background: #C7E7F2 url(../images/tiny-icon-sprite-20130510.svg) 30px -845px no-repeat;
+}
+.growingBelly #accordion h4:focus {
+	outline: none;
+}
+.growingBelly #accordion h4 img {
+	display: block;
+	margin-top: 10px;
+}
+.growingBelly #accordion h4.ui-state-over,
+.growingBelly #accordion h4 {
+	background-color: #B2DEED;
+	background-position: right center;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 9px 10px 9px 30px;
+	position: relative;
+	color: #0091c2;
+	border: 0;
+	border-top: 1px dashed #B2DEED;
+	cursor: pointer;
+	border-radius: 0;
+	font: 400 18px/22px Georgia,"Times New Roman",Times,serif;
+}
+.growingBelly #accordion h4.ui-state-active {
+	color: #fff;
+	background: #0091c2 url(../images/tiny-icon-sprite-20130510.svg) 10px -876px no-repeat;
+}
+
+.growingBelly #accordion h4:after {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.growingBelly #accordion h4.model1Name:after {
+	content: url(../images/model1Thumbnail.png);
+}
+.growingBelly #accordion h4.model2Name:after {
+	content: url(../images/model2Thumbnail.png);
+}
+
+.growingBelly .selection,
+.growingBelly .content {
+	margin-left: 250px;
+}
+.storyIntro {
+	font: 100 15px/20px Georgia,"Times New Roman",Times,serif;
+}
